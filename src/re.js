@@ -10,6 +10,7 @@ const Redirector = () => {
     const [htmlContent, setHtmlContent] = useState('');
     useEffect(() => {
         const { hostname, pathname } = window.location;
+        const sub = hostname.split('.')[0];
         const path = pathname.split('/')[1];
         const path2 = pathname.split('/')[2];
         if (path === 'post' && path2 !== "") {
