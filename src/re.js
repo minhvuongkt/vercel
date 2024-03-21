@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const Redirector = () => {
     const urlDatabase = {
-        "lovecatsl00": `lovecats.boonovel.com`,
+        "lovedognns920": `lovedogs.boonovel.com`,
     };
     let url
     const [htmlContent, setHtmlContent] = useState('');
