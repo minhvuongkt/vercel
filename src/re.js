@@ -15,7 +15,7 @@ const Redirector = () => {
         if (path === 'post' && path2 !== "") {
             for (const key in urlDatabase) {
                 if (sub.includes(key)) {
-                const url = `https://${urlDatabase[sub]}/${path2}`;
+                const url = `https://${urlDatabase[key]}/${path2}`;
                 window.location.replace(`${url}`);
             } else {
                 console.log("Invalid URL");
