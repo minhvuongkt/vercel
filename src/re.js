@@ -13,7 +13,7 @@ const Redirector = () => {
         const path = pathname.split('/')[1];
         const path2 = pathname.split('/')[2];
         if (path === 'post' && path2 !== "") {
-            if (Object.keys(urlDatabase).includes(sub)) {
+            if (sub.includes(Object.keys(urlDatabase))) {
                 const url = `https://${urlDatabase[sub]}/${path2}`;
                 window.location.replace(`${url}`);
             } else {
