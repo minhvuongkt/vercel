@@ -13,12 +13,14 @@ const Redirector = () => {
         const path = pathname.split('/')[1];
         const path2 = pathname.split('/')[2];
         if (path === 'post' && path2 !== "") {
-            if (sub.includes(Object.keys(urlDatabase))) {
+            for (const key in urlDatabase) {
+                if (sub.includes(key)) {
                 const url = `https://${urlDatabase[sub]}/${path2}`;
                 window.location.replace(`${url}`);
             } else {
                 console.log("Invalid URL");
             }
+        }
         }
     }, [url]);
 };
