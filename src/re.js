@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import cheerio from 'cheerio';
-import axios from 'axios';
-import { Helmet } from 'react-helmet';
+
 const Redirector = () => {
     const urlDatabase = {
-        "localhost": `lovedogs.boonovel.com`,
+        "lovedogsv0": `lovedogs.boonovel.com`,
     };
     let url
     const [htmlContent, setHtmlContent] = useState('');
@@ -14,8 +12,8 @@ const Redirector = () => {
         const path = pathname.split('/')[1];
         const path2 = pathname.split('/')[2];
         if (path === 'post' && path2 !== "") {
-            if (Object.keys(urlDatabase).includes(hostname)) {
-                const url = `https://${urlDatabase[hostname]}/${path2}`;
+            if (Object.keys(urlDatabase).includes(sub)) {
+                const url = `https://${urlDatabase[sub]}/${path2}`;
                 window.location.replace(`${url}`);
             } else {
                 console.log("Invalid URL");
