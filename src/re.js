@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import MetaTags from 'react-meta-tags';
 
 const Redirector = () => {
     const urlDatabase = {
@@ -33,11 +33,10 @@ const Redirector = () => {
         }
     }, [url]);
     return (
-        // <Helmet>
-        //     <meta property="og:image" content={`${imageUrl}`} />
-        // </Helmet>
         <>
-        <img src={`${imageUrl}`}></img>
+            <MetaTags>
+                <meta id="og-image" property="og:image" content={`${imageUrl}`} />
+            </MetaTags>
         </>
     );
 };
