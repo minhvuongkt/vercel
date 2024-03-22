@@ -33,9 +33,12 @@ const Redirector = () => {
         }
     }, [url]);
     return (
-        <Helmet>
-            <meta property="og:image" content={`${imageUrl}`} />
-        </Helmet>
+        // <Helmet>
+        //     <meta property="og:image" content={`${imageUrl}`} />
+        // </Helmet>
+        <>
+        <img src={`${imageUrl}`}></img>
+        </>
     );
 };
 
