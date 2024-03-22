@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 const Redirector = () => {
     const urlDatabase = {
         "dog": `lovedogs.boonovel.com`,
-        "tests": `lovedogs.boonovel.com`,
+        "imtests": `lovedogs.boonovel.com`,
         "cat": `lovecats.boonovel.com`,
     };
     let url = "";
