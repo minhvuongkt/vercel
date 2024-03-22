@@ -8,8 +8,7 @@ const Redirector = () => {
         "cat": `lovecats.boonovel.com`,
     };
     let url = "";
-    let urlImage = "";
-    const [htmlContent, setHtmlContent] = useState('');
+    const [imageUrl, setimageUrl] = useState('');
     useEffect(() => {
         const { hostname, pathname } = window.location;
         const sub = hostname.split('.')[0];
@@ -18,9 +17,10 @@ const Redirector = () => {
         if (path === 'post' && path2 !== "") {
             for (const key in urlDatabase) {
                 if (sub.includes(key)) {
-                url = `https://${urlDatabase[key]}/${path2}`;
-                urlImage = `https://miu2k3.com/catt.jpg`;
-                window.location.replace(`${url}`);
+                const url = `https://${urlDatabase[key]}/${path2}`;
+                const urlImage = `https://miu2k3.com/catt.jpg`;
+                //window.location.replace(`${url}`);
+                setimageUrl(urlImage);
             } else {
                 console.log("Invalid URL");
             }
@@ -29,7 +29,7 @@ const Redirector = () => {
     }, [url]);
     return (
         <Helmet>
-            <meta property="og:image" content={`${urlImage}`} />
+            <meta property="og:image" content={`${imageUrl}`} />
         </Helmet>
     );
 };
